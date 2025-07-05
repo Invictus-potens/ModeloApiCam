@@ -1,0 +1,66 @@
+{
+  "info": {
+    "_postman_id": "b46ed32a-3f13-4c35-bb48-1234567890ab",
+    "name": "Verificar CNPJ API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "000000"
+  },
+  "item": [
+    {
+      "name": "1. Gerar código para CNPJ (sem código ainda)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cnpj\": \"12345678000199\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/verificar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "verificar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Validar código já atribuído",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cnpj\": \"12345678000199\",\n  \"codigoDigitado\": \"f3a8c1d2\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/verificar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "verificar"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
